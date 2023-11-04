@@ -17,19 +17,13 @@ def cipher_message(message, keyword):
             encrypted += char
         else:
             k += 1
-            if k == len(keyword)-1:  # reset the k index
+            if k == len(keyword):  # reset the k index
                 k = 0
             if char in alpha_lower:
                 mat_key = alpha_lower.index(char)+alpha_lower.index(keyword.lower()[k])
                 if mat_key >25:
-                    pass
-
-                try:
-                    print(alpha_lower.index(char)+alpha_lower.index(keyword.lower()[k]))
-                    encrypted += (alpha_lower[alpha_lower.index(char)+alpha_lower.index(keyword.lower()[k])])
-                except:
-                    encrypted += (alpha_lower[alpha_lower.index(char)+alpha_lower.index(keyword.lower()[k]) - 26])
-
+                    mat_key -= 26
+                encrypted += alpha_lower[mat_key]
             elif char in alpha_upper:
                 try:
                     print(alpha_upper.index(char)+alpha_upper.index(keyword.upper()[k]))
