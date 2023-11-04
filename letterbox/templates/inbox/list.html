@@ -4,9 +4,11 @@
 
 {% block content %}
 <div>
-    {% for message in secret_message %}
+    {% for message in encrypted_messages %}
     <div>
+        <p>
         {{ message.text }}
+        </p>
     </div>
 
     {% endfor %}
