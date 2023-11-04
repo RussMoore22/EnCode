@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Secret Messages{% endblock title %}
+
+{% block content %}
+<div class="messages_container">
+    {% for message in encrypted_messages %}
+    <div class="message_block">
+        <p>to {{ message.receipient.username }}</p>
+        <p>
+        {{ message.text }}
+        </p>
+        <p>from {{message.sender.username}}</p>
+        <p>{{message.date_sent|date:"m/d/y"}}</p>
+    </div>
+
+    {% endfor %}
+</div>
+
+{% endblock content %}

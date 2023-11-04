@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock title %}</title>
+    <links href="">
 </head>
 <body>
     <header>
@@ -17,6 +18,7 @@
                 <a href="{% url 'login' %}">Login</a>
                 <a href="{% url 'signup' %}">Signup</a>
                 {% endif %}
+                <a href="{% url 'board' %}">Message Board</a>
             </div>
         </nav>
     </header>
