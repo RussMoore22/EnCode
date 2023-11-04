@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Secret Messages{% endblock title %}
+
+{% block content %}
+<div>
+    {% for message in secret_message %}
+    <div>
+        {{ message.text }}
+    </div>
+
+    {% endfor %}
+</div>
+
+{% endblock content %}
