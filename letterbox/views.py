@@ -1,15 +1,22 @@
 from django.shortcuts import render, redirect
 from .models import SecretMessage
 from .forms import ComposeForm
+from .cipher import cipher_message
 
 
 # Create your views here.
 
 
 def secret_messages_inbox(request):
-    secret_messages = SecretMessage.objects.all()
+    secret_messages = SecretMessage.objects.filter(receipient=request.user)
+    encrypted_messages = []
+    for secret_message in secret_messages:
+        obj_inst = secret_message
+        obj_inst.text = cipher_message(secret_message.text, secret_message.encoder)
+        encrypted_messages.append(obj_inst)
     context = {
         'secret_messages': secret_messages,
+        'encrypted_messages': encrypted_messages,
         }
     return render(request, 'inbox/list.html', context)
 

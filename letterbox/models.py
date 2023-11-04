@@ -18,3 +18,6 @@ class SecretMessage(models.Model):
         related_name='received_messages',
         on_delete=models.CASCADE,
     )
+class EncodedMessage(SecretMessage):
+    pass
+
