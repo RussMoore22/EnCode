@@ -15,6 +15,8 @@ def cipher_message(message, keyword):
             encrypted += char
         elif char in '1234567890':
             encrypted += char
+        elif char in '";:,.?/()[]+=-_!@#$%^&*':
+            encrypted += char
         else:
             k += 1
             if k == len(keyword):  # reset the k index
