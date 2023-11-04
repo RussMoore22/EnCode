@@ -25,11 +25,10 @@ def cipher_message(message, keyword):
                     mat_key -= 26
                 encrypted += alpha_lower[mat_key]
             elif char in alpha_upper:
-                try:
-                    print(alpha_upper.index(char)+alpha_upper.index(keyword.upper()[k]))
-                    encrypted += (alpha_upper[alpha_upper.index(char)+alpha_upper.index(keyword.lower()[k])])
-                except:
-                    encrypted += (alpha_upper[alpha_upper.index(char)+alpha_upper.index(keyword.lower()[k]) - 26])
+                mat_key = alpha_upper.index(char)+alpha_upper.index(keyword.upper()[k])
+                if mat_key >25:
+                    mat_key -= 26
+                encrypted += alpha_upper[mat_key]
     return encrypted
 #print(cipher_message('meetmeontuesdayeveningatseven', 'vigilance'))
 #print(cipher_message('m', 'vigilance'))
