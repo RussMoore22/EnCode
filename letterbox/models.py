@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 
 class SecretMessage(models.Model):
     text = models.TextField()
+    encrypted_text = models.TextField(null=True, blank=True)
     subject = models.CharField(max_length=225, null=True)
     encoder = models.CharField(max_length=20)
     date_sent = models.DateTimeField(auto_now_add=True)
@@ -18,10 +19,3 @@ class SecretMessage(models.Model):
         related_name='received_messages',
         on_delete=models.CASCADE,
     )
-class EncodedMessage(SecretMessage):
-    mess_id = models.IntegerField()
-    # mess_id = models.ForeignKey(
-    #     User,
-    #     related_name='raw_message',
-    #     on_delete=models.CASCADE,
-    # )

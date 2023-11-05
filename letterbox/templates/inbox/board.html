@@ -4,12 +4,12 @@
 
 {% block content %}
 <div class="messages_container">
-    {% for message in encrypted_messages %}
+    {% for message in secret_messages %}
     <div class="message_block">
         <p>to {{ message.receipient.username }}</p>
-        <p><a href="{% url 'detail' message.mess_id %}">{{ message.subject }}</a></p>
+        <p><a href="{% url 'detail' message.id %}">{{ message.subject }}</a></p>
         <p>
-        {{ message.text }}
+        {{ message.encrypted_text }}
         </p>
         <p>from {{message.sender.username}}</p>
         <p>{{message.date_sent|date:"m/d/y"}}</p>

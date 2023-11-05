@@ -5,13 +5,13 @@
 {% block content %}
 <div class="messages_container">
     <div class="message_block">
-        <p>to: {{ encrypted_message.receipient.username }}</p>
+        <p>to: {{ secret_message.receipient.username }}</p>
 
         <p>
-        {{ encrypted_message.text }}
+        {{ secret_message.encrypted_text }}
         </p>
-        <p>from {{ encrypted_message.sender.username }}</p>
-        <p>{{encrypted_message.date_sent|date:"m/d/y"}}</p>
+        <p>from {{ secret_message.sender.username }}</p>
+        <p>{{ secret_message.date_sent|date:"m/d/y"}}</p>
     </div>
 
 </div>
