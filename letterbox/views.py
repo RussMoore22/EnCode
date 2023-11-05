@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from .models import SecretMessage
-from .forms import ComposeForm
+from .forms import ComposeForm, DecipherForm
 from .cipher import cipher_message
+from .decipher import decipher_message
 
 
 # Create your views here.
@@ -44,3 +45,31 @@ def message_detail(request, id):
         'secret_message': secret_message
     }
     return render(request, 'inbox/detail.html', context)
+
+def message_decipher(request, id):
+    print('step 1 ************')
+    model_instance = SecretMessage.objects.get(id=id)
+    print(model_instance.id)
+    if request.method == "POST":
+        form = DecipherForm(request.POST, instance=model_instance)
+        print(form.is_valid(), '***************')
+        if form.is_valid():
+            form_model = form.save(False)
+            print(form_model.encrypted_text,'************encrypted_text')
+            model_instance.attempted_text = decipher_message(form_model.encrypted_text, form_model.key)
+            model_instance.key = form_model.key
+            model_instance.save()
+            return redirect('reveal', id=model_instance.id)
+    else:
+        form = DecipherForm(instance=model_instance)
+    context = {
+        "form": form
+    }
+    return render(request, 'inbox/decipher.html', context)
+
+def secret_detail(request, id):
+    revealed_message = SecretMessage.objects.get(id=id)
+    context = {
+        'revealed_message': revealed_message,
+    }
+    return render(request, 'inbox/reveal.html', context)

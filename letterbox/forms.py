@@ -11,3 +11,11 @@ class ComposeForm(ModelForm):
             'encoder',
 
         ]
+class DecipherForm(ModelForm):
+    class Meta:
+        model = SecretMessage
+        fields = [
+            'encrypted_text',
+            'key',
+
+        ]

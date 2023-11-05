@@ -13,6 +13,11 @@
         <p>from {{ secret_message.sender.username }}</p>
         <p>{{ secret_message.date_sent|date:"m/d/y"}}</p>
     </div>
+    <div>
+        <p>
+            <a href="{% url 'decipher' secret_message.id %}">attempt to decipher message</a>
+        </p>
+    </div>
 
 </div>
 

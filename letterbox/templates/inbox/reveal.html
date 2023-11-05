@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Secret Messages{% endblock title %}
+
+{% block content %}
+<div class="messages_container">
+    <div class="message_block">
+        <p>to: {{ revealed_message.receipient.username }}</p>
+
+        <p>
+        {{ revealed_message.attempted_text }}
+        </p>
+        <p>from {{ revealed_message.sender.username }}</p>
+        <p>{{ revealed_message.date_sent|date:"m/d/y"}}</p>
+    </div>
+    <div>
+        <p>
+            <a href="{% url 'decipher' revealed_message.id %}">Back to message</a>
+        </p>
+    </div>
+
+</div>
+
+{% endblock content %}
