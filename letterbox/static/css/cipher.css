@@ -1,0 +1,22 @@
+
+
+
+
+p {
+    color: rgb(0, 75, 180);
+}
+main {
+    background-color: rgb(225, 207, 183);
+}
+.messages_container {
+    display: grid;
+    grid-template-columns: repeat(2 2fr);
+    grid-template-rows: auto;
+}
+
+.message_block {
+    display: block;
+    background-color: 5px rgb(63, 63, 63);
+    padding: 18px;
+    margin: 10px;
+}

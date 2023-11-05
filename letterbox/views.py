@@ -26,6 +26,7 @@ def all_inbox(request):
     for secret_message in secret_messages:
         obj_inst = secret_message
         obj_inst.text = cipher_message(secret_message.text, secret_message.encoder)
+        obj_inst.mess_id = secret_message.id
         encrypted_messages.append(obj_inst)
     context = {
         'secret_messages': secret_messages,
@@ -48,3 +49,17 @@ def compose_message(request):
         'form': form
     }
     return render(request, 'sent/compose.html', context)
+
+def message_detail(request, id):
+    secret_message = SecretMessage.objects.get(id=id)
+    print('*******************************')
+    print(SecretMessage.objects.get(id=id).text)
+    encrypted_message = secret_message
+    encrypted_message.text = cipher_message(secret_message.text, secret_message.encoder)
+    encrypted_message.mess_id = secret_message.id
+    print(encrypted_message.text)
+
+    context = {
+        'encrypted_message': encrypted_message
+    }
+    return render(request, 'inbox/detail.html', context)

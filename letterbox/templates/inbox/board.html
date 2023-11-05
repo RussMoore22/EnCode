@@ -7,6 +7,7 @@
     {% for message in encrypted_messages %}
     <div class="message_block">
         <p>to {{ message.receipient.username }}</p>
+        <p><a href="{% url 'detail' message.mess_id %}">{{ message.subject }}</a></p>
         <p>
         {{ message.text }}
         </p>

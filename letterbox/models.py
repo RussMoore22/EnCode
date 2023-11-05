@@ -19,5 +19,9 @@ class SecretMessage(models.Model):
         on_delete=models.CASCADE,
     )
 class EncodedMessage(SecretMessage):
-    pass
-
+    mess_id = models.IntegerField()
+    # mess_id = models.ForeignKey(
+    #     User,
+    #     related_name='raw_message',
+    #     on_delete=models.CASCADE,
+    # )
