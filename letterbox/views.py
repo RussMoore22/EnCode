@@ -73,3 +73,6 @@ def secret_detail(request, id):
         'revealed_message': revealed_message,
     }
     return render(request, 'inbox/reveal.html', context)
+
+def about_page(request):
+    return render(request, 'inbox/about.html')

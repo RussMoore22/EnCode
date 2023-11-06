@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}About EnCode{% endblock title %}
+
+{% block content %}
+<div>
+    <p>
+        Welcome to project EnCode. Compose a message to another user with a secret encryption-key.
+        The message will be encrypted and will only be readable if the correct key is entered.
+        Messages will appear on the public board in their encrypted state. If another user has access to or
+        is able to correctly guess the encrpytion-key, your message may be deciphered and read.
+        try composing a message to another user and viewing the message on the public message board
+        in its encrypted state. Just remember to write down the encryption key you used!
+
+        Note: For now, once the encryption key is entered by another user, it will be publically
+        available unless overwritten.
+
+
+
+    </p>
+</div>
+{% endblock content %}

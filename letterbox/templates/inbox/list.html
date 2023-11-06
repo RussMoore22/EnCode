@@ -6,7 +6,7 @@
 <div>
     {% for message in secret_messages %}
     <div>
-        <p>From {{ message.sender }}</p>
+        <p>Sent to you by: {{ message.sender }}</p>
         <p><a href="{% url 'detail' message.id %}">{{ message.subject }}</a></p>
         <p>
         {{ message.encrypted_text }}
