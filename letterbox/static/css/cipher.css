@@ -1,12 +1,27 @@
+nav {
 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: rgba(118, 146, 249, 0.96);
+    padding: 16px;
 
+}
 
+nav a {
+
+    border: 3px solid black;
+    box-shadow: 1% 0px 1% rgb(63, 63, 63);
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(194, 130, 255);
+}
 
 p {
     color: rgb(0, 75, 180);
 }
-main {
-    background-color: rgb(225, 207, 183);
+body {
+    background-color: rgb(245, 220, 188);
 }
 .messages_container {
     display: grid;
@@ -16,7 +31,14 @@ main {
 
 .message_block {
     display: block;
+    border: 3px solid gray;
     background-color: 5px rgb(63, 63, 63);
     padding: 18px;
-    margin: 10px;
+    margin: 20px;
+}
+
+img {
+    height: auto;
+    width: 95%;
+
 }
