@@ -5,7 +5,7 @@
 {% block content %}
 
 <div class="messages_container">
-    {% for message in secret_messages|dictsort:"date_sent" %}
+    {% for message in secret_messages|dictsortreversed:"date_sent" %}
     <div class="message_block">
         <p>to {{ message.receipient.username }}</p>
         <p><a href="{% url 'detail' message.id %}">{{ message.subject }}</a></p>
