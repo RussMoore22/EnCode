@@ -1,8 +1,10 @@
 from django.shortcuts import render
-from .forms import LoginForm, Signup_Form
+from .forms import LoginForm, Signup_Form, PreferencesForm
 from django.contrib.auth import login, authenticate, logout
 from django.shortcuts import redirect
 from django.contrib.auth.models import User
+from .models import Preferences, Mode
+from django.contrib.auth.decorators import login_required
 #from django.contrib.auth.models import User
 
 # Create your views here.
@@ -45,6 +47,10 @@ def user_signup(request):
             if pw == pwc:
                 user = User.objects.create_user(un, email=None, password=pw)
                 if user is not None:
+                    default_pref = Preferences.objects.create()
+                    default_pref.owner = user
+                    default_pref.display_mode = Mode.objects.get(id=2)
+                    default_pref.save()
                     login(request, user)
                     return redirect('inbox_list')
             else:
@@ -56,3 +62,19 @@ def user_signup(request):
         'form': form,
     }
     return render(request, 'accounts/signup.html', context)
+
+
+@login_required
+def change_preferences(request, id=id):
+    model_instance = Preferences.objects.get(owner=request.user)
+    if request.method == "POST":
+        form = PreferencesForm(request.POST, instance=model_instance)
+        if form.is_valid():
+            form.save()
+            return redirect('list_projects')
+    else:
+        form = PreferencesForm(instance=model_instance)
+    context = {
+        'form': form
+    }
+    return render(request, 'accounts/preferences.html', context)

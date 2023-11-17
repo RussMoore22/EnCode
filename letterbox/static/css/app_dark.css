@@ -1,0 +1,110 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    color: #c0c0c0;
+  }
+
+input, textarea, button, select {
+    color:rgb(0, 0, 0);
+    font-weight: bold;
+    background-color: rgb(222, 222, 219);
+  }
+
+html, body {
+    background-color: rgb(38, 38, 38);
+  }
+div>h1, div>h2, thead>tr {
+    color: rgb(255, 255, 255);
+}
+
+header nav ul {
+    background-color: rgb(38, 38, 38);
+    border-bottom: 1px solid #919191;
+    box-sizing: border-box;
+    list-style: none;
+    margin-top: 0;
+    margin-bottom: 2em;
+    padding: 0 0 0 1em;
+  }
+
+  header nav ul li a {
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  select[multiple] {
+    color: #c0c0c0;
+
+  }
+
+  /* Make the login and sign-up forms look nicer */
+.login-form,
+.signup-form {
+  background-color: rgb(38, 38, 38);
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(106, 0, 120, 0.638);
+  margin: auto;
+  max-width: 400px;
+  padding: 2em;
+}
+
+/* Make the task and projects forms look nicer */
+.task-form,
+.project-form {
+  background-color: rgb(38, 38, 38);
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin: auto;
+  max-width: 600px;
+  padding: 2em;
+}
+
+/* Add a nice box around the lists and details */
+.my-tasks-list,
+.project-list,
+.project-detail {
+  background-color: rgb(38, 38, 38);
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin: auto;
+  max-width: 800px;
+  padding: 2em;
+}
+
+/* Add horizontal rules to all rows except the last */
+.my-tasks-list tbody :not(tr:last-child) td,
+.project-list tbody :not(tr:last-child) td,
+.project-detail tbody :not(tr:last-child) td {
+  border-bottom: 1px solid rgb(94, 94, 94);
+}
+
+a {
+    color: #c0c0c0;
+
+}
+
+a:hover {
+    color: rgb(63, 63, 255);
+
+}
+td>a:hover {
+    color: rgb(127, 127, 255);
+}
+
+nav a:hover {
+    color: rgb(192, 30, 192)
+}
+
+table {
+    background-color: #575757;
+}
+
+.incomplete_task>td {
+    color: rgb(255, 255, 255);
+}
+
+tbody>.complete_task {
+    background-color: rgb(38, 38, 38);
+}
