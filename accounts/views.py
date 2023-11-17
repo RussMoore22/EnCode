@@ -71,7 +71,7 @@ def change_preferences(request, id=id):
         form = PreferencesForm(request.POST, instance=model_instance)
         if form.is_valid():
             form.save()
-            return redirect('list_projects')
+            return redirect('board')
     else:
         form = PreferencesForm(instance=model_instance)
     context = {

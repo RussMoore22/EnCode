@@ -1,3 +1,25 @@
+nav {
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: rgb(0, 8, 35);
+  padding: 16px;
+
+}
+nav a {
+
+  border: 3px solid black;
+  box-shadow: 1% 0px 1% rgb(63, 63, 63);
+  padding: 10px;
+  margin: 10px;
+  background-color: rgb(115, 0, 0);
+}
+
+p {
+  color: rgb(255, 239, 215);
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;

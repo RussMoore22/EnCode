@@ -3,9 +3,20 @@
 {% block title %}Secret Messages{% endblock title %}
 
 {% block content %}
+{% if secret_messages|length == 0 %}
 <div>
+<p>
+    You do not yet have any messages sent to you...
+    Would you like to <a href="{% url 'compose' %}">create one</a>?
+</p>
+<p>
+    Or... take a look at the public <a href="{% url 'board' %}">Message Board </a>to view all messages
+</p>
+</div>
+{% else %}
+<div class="messages_container">
     {% for message in secret_messages %}
-    <div>
+    <div class="message_block">
         <p>Sent to you by: {{ message.sender }}</p>
         <p><a href="{% url 'detail' message.id %}">{{ message.subject }}</a></p>
         <p>
@@ -14,6 +25,8 @@
     </div>
 
     {% endfor %}
+
 </div>
+{% endif %}
 
 {% endblock content %}

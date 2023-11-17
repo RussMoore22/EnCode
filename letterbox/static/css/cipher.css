@@ -3,7 +3,7 @@ nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    background-color: rgba(118, 146, 249, 0.96);
+    background-color: rgb(154,165,139);
     padding: 16px;
 
 }
@@ -14,14 +14,15 @@ nav a {
     box-shadow: 1% 0px 1% rgb(63, 63, 63);
     padding: 10px;
     margin: 10px;
-    background-color: rgb(194, 130, 255);
+    background-color: rgb(47, 45, 9);
+    color: rgb(201,221,198);
 }
 
 p {
-    color: rgb(0, 75, 180);
+    color: rgb(201,221,198);
 }
 body {
-    background-color: rgb(245, 220, 188);
+    background-color: rgb(114,122,101);
 }
 .messages_container {
     display: grid;
@@ -31,8 +32,8 @@ body {
 
 .message_block {
     display: block;
-    border: 3px solid gray;
-    background-color: 5px rgb(63, 63, 63);
+    border: 3px solid rgb(201,221,198);
+    background-color: 5px rgb(175,188,161);
     padding: 18px;
     margin: 20px;
 }

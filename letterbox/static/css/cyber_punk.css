@@ -1,0 +1,131 @@
+nav {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: rgb(9,24,51);
+    padding: 16px;
+
+}
+
+nav a {
+
+    border: 3px solid (9,24,51);
+    box-shadow: 1% 0px 1% rgb(10,189,198);
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(19,62,124);
+}
+
+p {
+    color: rgb(10,189,198);
+}
+
+body {
+    background-color: rgb(9,24,51);
+}
+.messages_container {
+    display: grid;
+    grid-template-columns: repeat(2 2fr);
+    grid-template-rows: auto;
+}
+
+.message_block {
+    display: block;
+    border: 3px solid rgb(234,0,217);
+    background-color: 5px rgb(9,24,51);
+    padding: 18px;
+    margin: 20px;
+}
+nav {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: rgb(9,24,51);
+    padding: 16px;
+
+  }
+  nav a {
+
+    border: 3px solid black;
+    box-shadow: 1% 0px 1% rgb(9,24,51);
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(113,28,145);
+    color: rgb(19,62,124);
+  }
+
+
+  body {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 16px;
+      margin: 0;
+      padding: 0;
+      color: rgb(10,189,198);
+    }
+
+  input, textarea, button, select {
+      color:rgb(10,189,198);
+      font-weight: bold;
+      background-color: rgb(234,0,217);
+    }
+
+  html, body {
+      background-color: rgb(9,24,51);
+    }
+  div>h1, div>h2, thead>tr {
+      color: rgb(10,189,198);
+  }
+
+  header nav ul {
+      background-color: rgb(38, 38, 38);
+      border-bottom: 1px solid #919191;
+      box-sizing: border-box;
+      list-style: none;
+      margin-top: 0;
+      margin-bottom: 2em;
+      padding: 0 0 0 1em;
+    }
+
+    header nav ul li a {
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    select[multiple] {
+      color: rgb(10,189,198);
+
+    }
+
+    /* Make the login and sign-up forms look nicer */
+  .login-form,
+  .signup-form {
+    background-color: rgb(9,24,51);
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(106, 0, 120, 0.638);
+    margin: auto;
+    max-width: 400px;
+    padding: 2em;
+  }
+
+  a {
+      color: rgb(113,28,145);
+
+  }
+
+  a:hover {
+      color: rgb(234,0,217);
+
+  }
+  td>a:hover {
+      color: rgb(127, 127, 255);
+  }
+
+  nav a:hover {
+      color: rgb(10,189,198)
+  }
+
+  table {
+      background-color: rgb(19,62,124);
+  }

@@ -3,11 +3,12 @@ from .models import SecretMessage
 from .forms import ComposeForm, DecipherForm
 from .cipher import cipher_message
 from .decipher import decipher_message
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
 
-
+@login_required
 def secret_messages_inbox(request):
     secret_messages = SecretMessage.objects.filter(receipient=request.user)
     context = {
@@ -22,6 +23,7 @@ def all_inbox(request):
         }
     return render(request, 'inbox/board.html', context)
 
+@login_required
 def compose_message(request):
     if request.method == "POST":
         form = ComposeForm(request.POST)
@@ -38,6 +40,7 @@ def compose_message(request):
         'form': form
     }
     return render(request, 'sent/compose.html', context)
+
 
 def message_detail(request, id):
     secret_message = SecretMessage.objects.get(id=id)
